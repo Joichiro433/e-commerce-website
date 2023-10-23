@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Main File",
+            "type": "python",
+            "request": "launch",
+            "program": "main.py",
+            "args": ["arg1", "arg2"],  // コマンドライン引数を指定
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Python: FastAPI",
+            "type": "python",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": ["main:app", "--host", "0.0.0.0", "--reload"],  // apiディレクトリ直下のmain.pyを実行
+            "cwd": "${workspaceFolder}/api",
+            "jinja": true
+        }
+    ]
+}

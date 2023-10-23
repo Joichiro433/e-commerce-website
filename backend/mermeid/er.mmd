@@ -1,0 +1,33 @@
+%%{init: {'theme':'neutral'}}%%
+erDiagram
+    USER {
+        int id(PK)
+        string name
+        string email
+        string hashed_password
+    }
+
+    PRODUCT {
+        int id(PK)
+        string name
+        string description
+        float price
+        string auther
+        string image_url
+    }
+
+    ORDER {
+        int id(PK)
+        int user_id(FK-USERid)
+    }
+
+    ORDERITEM {
+        int id(PK)
+        int order_id(FK-ORDERid)
+        int product_id(FK-PRODUCTid)
+        int quantity
+    }
+
+    USER ||--o{ ORDER : places
+    PRODUCT ||--o{ ORDERITEM : includes
+    ORDER ||--o{ ORDERITEM : has

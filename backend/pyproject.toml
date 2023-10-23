@@ -1,0 +1,54 @@
+[tool.poetry]
+name = "api"
+version = "0.1.0"
+description = ""
+authors = ["Joichiro433 <joichiro322@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<4.0"
+fastapi = "^0.100.1"
+sqlmodel = "^0.0.8"
+alembic = "^1.11.1"
+uvicorn = "^0.23.2"
+rich = "^13.5.1"
+pytest = "^7.4.0"
+ruff = "^0.0.282"
+mypy = "^1.4.1"
+black = "^23.7.0"
+firebase-admin = "^6.2.0"
+Pyrebase4 = "^4.7.1"
+python-multipart = "^0.0.6"
+numpy = "^1.25.2"
+# pandas = "^2.0.3"
+# polars = "^0.18.12"
+# jupyterlab = "^4.0.4"
+# xlsx2csv = "^0.8.1"
+pretty-errors = "^1.2.25"
+httpx = "^0.24.1"
+redis = "^4.6.0"
+ulid-py = "^1.1.0"
+# fastapi-mail = "1.3.1"
+# sentence-transformers = "^2.2.2"
+python-dotenv = "^1.0.0"
+cloud-sql-python-connector = "^1.4.2"
+pg8000 = "^1.30.2"
+psycopg2 = "^2.9.9"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+select = ["E", "F", "N", "W", "I", "B", "PL", "ANN", "PD", "NPY", "AIR", "DJ", "RUF"]
+ignore = [
+    "ANN101",  # missing-type-self
+    "ANN102",  # missing-type-cls
+    "ANN002",  # missing-type-args
+    "ANN003",  # missing-type-kwargs
+    "RUF001",  # 全角記号など`ambiguous unicode character`も使いたいため
+    "RUF002",  # 全角記号など`ambiguous unicode character`も使いたいため
+    "RUF003",  # 全角記号など`ambiguous unicode character`も使いたいため
+]
+line-length = 120
